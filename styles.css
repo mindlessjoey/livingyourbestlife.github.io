@@ -298,17 +298,6 @@ img, svg {
   transform: translate(-50%, -50%);
 }
 
-.floating-card {
-  position: absolute;
-  background: white;
-  border-radius: 20px;
-  padding: 16px 18px;
-  box-shadow: 0 12px 30px var(--shadow);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .estimate-card {
   left: 28px;
   top: 28px;
