@@ -170,7 +170,7 @@
         <span class="label">Why Choose Us</span>
         <h2>Dependable service with a professional touch.</h2>
         <p>
-          We understand that home repairs can be stressful. That’s why we show up
+          We understand that home repairs can be stressful. That's why we show up
           prepared, communicate clearly, and focus on practical solutions that fit
           your home, budget, and schedule.
         </p>
@@ -238,24 +238,24 @@
         <article class="review-card">
           <div class="stars">★★★★★</div>
           <p>
-            “living your best life servicesreplaced our fence gate, fixed a bathroom leak, and left
-            everything clean. Professional and fast.”
+            "living your best life servicesreplaced our fence gate, fixed a bathroom leak, and left
+            everything clean. Professional and fast."
           </p>
           <span class="review-author">M. Carter</span>
         </article>
         <article class="review-card highlighted-review">
           <div class="stars">★★★★★</div>
           <p>
-            “The team was on time and explained each part of the repair. We’ll call
-            them for future projects.”
+            "The team was on time and explained each part of the repair. We'll call
+            them for future projects."
           </p>
           <span class="review-author">T. Rivera</span>
         </article>
         <article class="review-card">
           <div class="stars">★★★★★</div>
           <p>
-            “They assembled our new shelves, patched wall damage, and installed a
-            ceiling fan with zero hassle.”
+            "They assembled our new shelves, patched wall damage, and installed a
+            ceiling fan with zero hassle."
           </p>
           <span class="review-author">J. Williams</span>
         </article>
@@ -267,7 +267,7 @@
     <div class="container cta-wrap">
       <div>
         <span class="label">Need help at home?</span>
-        <h2>Let’s make your home safer, stronger, and more beautiful.</h2>
+        <h2>Let's make your home safer, stronger, and more beautiful.</h2>
       </div>
       <a class="btn btn-light" href="#contact">Book a Free Estimate</a>
     </div>
@@ -279,7 +279,7 @@
         <span class="label">Contact Us</span>
         <h2>Request your service today.</h2>
         <p>
-          Tell us about your repair, improvement, or maintenance needs. We’ll follow
+          Tell us about your repair, improvement, or maintenance needs. We'll follow
           up to schedule a convenient time.
         </p>
         <div class="contact-list">
@@ -299,31 +299,39 @@
         </div>
       </div>
 
-      <form class="contact-form">
+      <div data-fs-success style="display:none; padding: 16px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+        Thanks! We'll reach out shortly to schedule your estimate.
+      </div>
+      <div data-fs-error style="display:none; padding: 16px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; color: #721c24;"></div>
+
+      <form id="contact-form" class="contact-form">
         <div class="form-field">
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <input type="text" id="name" name="name" placeholder="Your name" data-fs-field required />
+          <span data-fs-error="name" style="color: #721c24; font-size: 0.875rem; display:none;"></span>
         </div>
         <div class="form-field">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+          <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" data-fs-field required />
+          <span data-fs-error="phone" style="color: #721c24; font-size: 0.875rem; display:none;"></span>
         </div>
         <div class="form-field">
           <label for="service">Service Needed</label>
-          <select id="service" name="service" required>
+          <select id="service" name="service" data-fs-field required>
             <option value="">Select a service</option>
             <option value="general-repairs">General Repairs</option>
             <option value="outdoor-projects">Outdoor Projects</option>
             <option value="remodel-install">Remodel & Install</option>
             <option value="emergency-help">Emergency Help</option>
           </select>
+          <span data-fs-error="service" style="color: #721c24; font-size: 0.875rem; display:none;"></span>
         </div>
         <div class="form-field">
           <label for="message">Project Details</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need help with"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need help with" data-fs-field></textarea>
+          <span data-fs-error="message" style="color: #721c24; font-size: 0.875rem; display:none;"></span>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Request Estimate</button>
-        <div class="form-status" role="status" aria-live="polite"></div>
+        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>Request Estimate</button>
       </form>
     </div>
   </section>
@@ -356,5 +364,10 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'maewkjwl' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
